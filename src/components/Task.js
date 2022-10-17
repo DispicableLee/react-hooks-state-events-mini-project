@@ -1,10 +1,10 @@
 import React from "react";
 
-function Task() {
+function Task({tasks, categories}) {
   return (
     <div className="task">
-      <div className="label">CATEGORY HERE</div>
-      <div className="text">TEXT HERE</div>
+      <div className="label">{tasks}</div>
+      <div className="text">{categories}</div>
       <button className="delete">X</button>
     </div>
   );

@@ -1,9 +1,20 @@
 import React from "react";
+import Task from "./Task";
+function TaskList({tasks}) {
+  console.log(tasks)
+    const kSat = tasks.map((task)=>{
+      console.log(task.text)
+      return (
+        <Task
+        categories={task.category}
+        tasks = {task.text}
+        />
+      )
+    })
 
-function TaskList() {
   return (
     <div className="tasks">
-      {/* display a list of tasks using Task component */}
+      {kSat}
     </div>
   );
 }
