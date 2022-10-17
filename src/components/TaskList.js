@@ -1,13 +1,13 @@
 import React from "react";
 import Task from "./Task";
-function TaskList({tasks}) {
-  console.log(tasks)
-    const kSat = tasks.map((task)=>{
-      console.log(task.text)
+function TaskList({listedTasks, deleteHandler}) {
+    const kSat = listedTasks.map((task)=>{
       return (
         <Task
+        key={task.key}
         categories={task.category}
         tasks = {task.text}
+        deleteHandler={deleteHandler}
         />
       )
     })

@@ -1,16 +1,29 @@
-import React from "react";
 
-function NewTaskForm() {
+import React, { useState } from "react";
+
+function NewTaskForm({cats, formHandler}) {
+  const renderedOptions = cats.map((cat)=>{
+    return(
+      <option>{cat}</option>
+
+    )
+  })
   return (
-    <form className="new-task-form">
+    <form 
+      onSubmit={formHandler}
+    className="new-task-form">
       <label>
         Details
-        <input type="text" name="text" />
+        <input 
+          type="text" 
+          name="text"
+          />
       </label>
       <label>
         Category
-        <select name="category">
-          {/* render <option> elements for each category here */}
+        <select 
+          name="category">
+          {renderedOptions}
         </select>
       </label>
       <input type="submit" value="Add task" />
